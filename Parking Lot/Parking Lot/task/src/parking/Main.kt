@@ -166,10 +166,7 @@ class ParkingLot(size: Int = 0) {
             if (size == 0) {
                 println("Parking lot is empty.")
             }
-        } else {
-            println("Sorry, a parking lot has not been created.")
         }
-
     }
 
     private fun isEmptySpot(car: Car): Boolean {

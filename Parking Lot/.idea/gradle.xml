@@ -11,12 +11,14 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Parking Lot (1)/task" />
             <option value="$PROJECT_DIR$/Parking Lot/task" />
             <option value="$PROJECT_DIR$/Problems/A capital letter or a digit" />
             <option value="$PROJECT_DIR$/Problems/A small version of the Battleship game" />
             <option value="$PROJECT_DIR$/Problems/Application as a class" />
             <option value="$PROJECT_DIR$/Problems/Area printer" />
             <option value="$PROJECT_DIR$/Problems/Bank account" />
+            <option value="$PROJECT_DIR$/Problems/Check if N numbers is sorted ascending" />
             <option value="$PROJECT_DIR$/Problems/Check the numbers" />
             <option value="$PROJECT_DIR$/Problems/Check the order" />
             <option value="$PROJECT_DIR$/Problems/Compare Latin letters" />
