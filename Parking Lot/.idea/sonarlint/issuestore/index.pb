@@ -95,3 +95,5 @@ S
 ,Problems/toString() modification/src/Task.kt,e\9\e9dc3666289b4a57eae32d95dd8d0a0d4b2d500c
 \
 ,Problems/From string to a number/src/Task.kt,8\3\83d6d25dcb4c60f595ad33cf695ca557a14421b8
+@
+course-info.yaml,8\1\81db7fbbb03b3e3f063d803783ac0942e85a4031

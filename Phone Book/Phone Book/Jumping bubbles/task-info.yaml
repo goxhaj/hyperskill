@@ -1,0 +1,110 @@
+type: edu
+custom_name: stage2
+files:
+- name: test/PhoneBookTest.java
+  visible: false
+  text: |
+    import org.hyperskill.hstest.v6.stage.BaseStageTest;
+    import org.hyperskill.hstest.v6.testcase.CheckResult;
+    import org.hyperskill.hstest.v6.testcase.TestCase;
+    import phonebook.MainKt;
+
+    import java.util.Arrays;
+    import java.util.List;
+
+    public class PhoneBookTest extends BaseStageTest {
+        public PhoneBookTest() {
+            super(MainKt.class);
+        }
+
+        @Override
+        public List<TestCase> generate() {
+            return Arrays.asList(
+                new TestCase().setTimeLimit(30 * 60 * 1000)
+            );
+        }
+
+        @Override
+        public CheckResult check(String reply, Object clue) {
+            reply = reply.toLowerCase();
+            return new CheckResult(
+                reply.contains("start searching")
+                    && reply.contains("found")
+                    && reply.contains("min.")
+                    && reply.contains("sec.")
+                    && reply.contains("ms.")
+                    && reply.contains("sorting time")
+                    && reply.contains("searching time")
+                    && reply.contains("linear search")
+                    && reply.contains("bubble sort")
+                    && reply.contains("jump search"));
+        }
+    }
+  learner_created: false
+- name: src/phonebook/Main.kt
+  visible: true
+  text: |-
+    package phonebook
+
+    import java.io.File
+
+
+    class PhoneBook {
+
+        var phoneBook: Array<String>
+        var people: Array<String>
+
+        constructor(phoneBookFile: String, peopleFile: String) {
+            this.phoneBook = loadPhoneBook(phoneBookFile)
+            this.people = loadPeople(peopleFile)
+        }
+
+        //"C:\\Users\\agoxhaj\\directory.txt"
+        fun loadPhoneBook(fileName: String): Array<String> {
+            val lines = File(fileName).readLines()
+            phoneBook = Array<String>(lines.size) { String() }
+            for ((i, line) in lines.withIndex()) {
+                val contact = line.split(" ")
+                if (contact.size == 3)
+                    phoneBook[i] = contact[1] + " " + contact[2]
+                else
+                    phoneBook[i] = contact[1]
+            }
+            return phoneBook
+        }
+
+        //"C:\\Users\\agoxhaj\\find.txt"
+        fun loadPeople(fileName: String): Array<String> {
+            val lines = File(fileName).readLines()
+            people = Array<String>(lines.size) { String() }
+            for ((i, line) in lines.withIndex()) {
+                people[i] = line
+            }
+            return people
+        }
+
+        fun findPeople(): Int {
+            var count = 0
+            for (person in people) {
+                if (phoneBook.contains(person)) {
+                    count++
+                }
+            }
+            return count
+        }
+
+    }
+
+    fun main() {
+        val phoneBook = PhoneBook("C:\\Users\\agoxhaj\\directory.txt", "C:\\Users\\agoxhaj\\find.txt")
+        val start = System.currentTimeMillis()
+        println("Start searching...")
+        val found = phoneBook.findPeople()
+        val end = System.currentTimeMillis()
+        val entries = phoneBook.people.size
+        println("Found $found / $entries entries. Time taken: " + String.format("%1\$tM min. %1\$tS sec. %1\$tL ms.",  end - start))
+    }
+  learner_created: true
+feedback_link: https://hyperskill.org/projects/86/stages/477/implement
+status: Solved
+record: 2
