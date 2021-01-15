@@ -1,0 +1,1 @@
+C:\Users\agoxhaj\IdeaProjects\Flashcards\Flashcards\task\build\classes\kotlin\main\flashcards\FlashCard.class;C:\Users\agoxhaj\IdeaProjects\Flashcards\Flashcards\task\build\classes\kotlin\main\flashcards\FlashCardGame.class;C:\Users\agoxhaj\IdeaProjects\Flashcards\Flashcards\task\build\classes\kotlin\main\flashcards\MainKt.class
